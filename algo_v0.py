@@ -1,4 +1,5 @@
 from vehicule import *
+from Ride import *
 
 def algo(rides, vehicles, T):
     '''rides are sorted by (first start date, last possible start date) '''
