@@ -7,7 +7,8 @@ nbRides = constants[3]
 bonus = constants[4]
 timeMax = constants[5]
 
-for k in range(1, nbRides+1):
-    ride = fichier.readline().rstrip().split(' ')
+listRides = []
 
+for k in range(0, nbRides):
+    listRides.append(fichier.readline().rstrip().split(' '), k)
 
