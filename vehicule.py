@@ -10,7 +10,6 @@ class Vehicule():
         self.time_counter = 0
         self.is_used = False
         self.waiting_time = 0
-        
         self.rides_done = []
     
     #set a ride
