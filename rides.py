@@ -49,8 +49,8 @@ for filename in files_list:
     for k in range(0, nbVehic):
         l = str(len(vehicules[k].rides_done))
         for id_ in vehicules[k].rides_done:
-            l += " " + str(id_)
-        output.write(l)
+            l = l + " " + str(id_)
+        output.write(l + "\n")
     
     output.close()
     
