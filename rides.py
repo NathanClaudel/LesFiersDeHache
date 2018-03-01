@@ -29,6 +29,7 @@ for k in range(0, nbVehic):
 Ici le coeur de l'algo
 """
 
+#appel de l'algo
 
 """
 Ecriture du fichier d'output
@@ -53,9 +54,19 @@ score = 0
 for v in vehicules:
     rides_done = v.rides_done
     t = 0
+    x, y = 0, 0
     
     for id_ in rides_done:
-        pass
+        score += listRides[id_].time
+        x_, y_ = listRides[id_].posStart
+        
+        if(t + abs(x - x_) + abs(y - y_) <= listRides[id_].earlyStart):
+            score += bonus
+            t = listRides[id_].earlyStart + listRides[id_].time
+        else:
+            t = t + abs(x - x_) + abs(y - y_) + listRides[id_].time
+
+print(score)
     
 
 
