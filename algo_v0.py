@@ -40,8 +40,8 @@ def choose_vehicle(t, ride, waiting_vehicles):
 
 def rides_to_check(rides, t):
     r_list = []
-        if(t > ride.latestFinish):
     for ride in rides:
+        if(t > ride.latestFinish):
             rides.remove(ride)
         if(t >= ride.earlyStart):
             r_list.append(ride)
