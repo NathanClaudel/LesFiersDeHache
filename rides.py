@@ -11,10 +11,11 @@ bonus = int(constants[4])
 timeMax = int(constants[5])
 
 listRides = []
+ridesToDo =[]
 
 for k in range(0, nbRides):
     listRides.append(Ride(list(map(lambda x: int(x), fichier.readline().rstrip().split(' '))), k))
-
+    ridesToDo.append(Ride(list(map(lambda x: int(x), fichier.readline().rstrip().split(' '))), k))
 
 vehicules = []
 for k in range(0, nbVehic):
