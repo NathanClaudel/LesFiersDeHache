@@ -28,7 +28,8 @@ def algo(rides, vehicles, T):
             
         
             
-def choose_vehicle(t, ride, waiting_vehicles):    
+def choose_vehicle(t, ride, waiting_vehicles):
+    '''returns a vehicle able to make the ride'''
     for vehicle in waiting_vehicles:
         d = dist(vehicle.pos, ride.posStart)
         
@@ -40,6 +41,7 @@ def choose_vehicle(t, ride, waiting_vehicles):
     
 
 def rides_to_check_gen(rides, t):
+    '''rides possible to start at time t'''
     r_list = []
     for ride in rides:
         if(t > ride.latestFinish):
