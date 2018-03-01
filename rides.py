@@ -15,10 +15,11 @@ bonus = int(constants[4])
 timeMax = int(constants[5])
 
 listRides = []
+ridesToDo =[]
 
 for k in range(0, nbRides):
     listRides.append(Ride(list(map(lambda x: int(x), fichier.readline().rstrip().split(' '))), k))
-
+    ridesToDo.append(Ride(list(map(lambda x: int(x), fichier.readline().rstrip().split(' '))), k))
 fichier.close()
 
 vehicules = []
@@ -67,9 +68,6 @@ for v in vehicules:
             t = t + abs(x - x_) + abs(y - y_) + listRides[id_].time
 
 print(score)
-    
-
-
 
 
 
