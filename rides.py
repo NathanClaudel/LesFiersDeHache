@@ -3,7 +3,7 @@ from vehicule import *
 from algo_v0 import algo
 
 total_score = 0
-files_list = ["a_example"] #, "b_should_be_easy", "c_no_hurry", "d_metropolis", "e_high_bonus"]
+files_list = ["a_example", "b_should_be_easy", "c_no_hurry", "d_metropolis", "e_high_bonus"]
 
 for filename in files_list:
     """
