@@ -30,6 +30,7 @@ for k in range(0, nbVehic):
 Ici le coeur de l'algo
 """
 
+listRides.sort(key=lambda x: x.earlyStart)
 
 """
 Ecriture du fichier d'output
