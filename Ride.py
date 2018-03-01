@@ -7,6 +7,7 @@ class Ride():
     yEnd
     earlyStart
     latestFinish
+    id
 
     Calculated:
     time
