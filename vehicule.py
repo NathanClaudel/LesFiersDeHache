@@ -25,8 +25,8 @@ class Vehicule():
                 self.is_used = False
             
     def update_time(self, current_time):
-        if(current_time >= time_counter):
-            is_used = False
+        if(current_time >= self.time_counter):
+            self.is_used = False
 
     
     def get_pos(self):
