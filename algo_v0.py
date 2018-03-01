@@ -28,8 +28,7 @@ def algo(rides, vehicles, T):
             
         
             
-def choose_vehicle(t, ride, waiting_vehicles):
-    
+def choose_vehicle(t, ride, waiting_vehicles):    
     for (vehicle, time_waited) in waiting_vehicles:
         d = dist(vehicle.pos, ride.posStart)
         
@@ -37,4 +36,14 @@ def choose_vehicle(t, ride, waiting_vehicles):
             return (vehicle, time_waited)
     
     raise Exception("No vehicle can do this ride")
+    
+    
+
+def rides_to_check(rides, t):
+    r_list = []
+    for(ride in rides):
+        if(t > ride.latestFinish):
+            rides.remove(ride)
+        if(t >= ride.earlyStart):
+            r_list.append(ride)
 
