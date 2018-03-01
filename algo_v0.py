@@ -7,8 +7,22 @@ def algo(rides, vehicles, T):
         
         rides_to_check = rides_to_check(rides, t) #rides with start_date <= t <= latest_start
         
-        for r in rides_to_check:
+        for ride in rides_to_check:
             
-            for (vehicle, time_waited) in waiting_vehicles:
-                
-                if(dist(vehicle.pos)
+            try:
+                choose_vehicle(t, ride, waiting_vehicles).set_ride(t, ride)
+            
+                    
+
+                 
+            
+def choose_vehicle(t, ride, waiting_vehicles):
+    
+    for (vehicle, time_waited) in waiting_vehicles:
+        d = dist(vehicle.pos, ride.posStart)
+        
+        if(d <= time_waited):
+            return vehicle
+    
+    raise Exception("No vehicle can do this ride")
+    
