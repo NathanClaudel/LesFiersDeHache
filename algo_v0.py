@@ -7,7 +7,7 @@ def algo(rides, vehicles, T):
     
     for t in range(T):
         
-        rides_to_check = rides_to_check(rides, t) #rides with start_date <= t <= latest_start
+        rides_to_check = rides_to_check_gen(rides, t) #rides with start_date <= t <= latest_start
         
         for ride in rides_to_check:
             
@@ -38,7 +38,7 @@ def choose_vehicle(t, ride, waiting_vehicles):
     
     
 
-def rides_to_check(rides, t):
+def rides_to_check_gen(rides, t):
     r_list = []
     for ride in rides:
         if(t > ride.latestFinish):
