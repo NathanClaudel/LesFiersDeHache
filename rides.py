@@ -38,7 +38,7 @@ for filename in files_list:
     ridesToDo = [ride for ride in listRides]
     ridesToDo.sort(key=lambda x: x.earlyStart)
     T = list(range(0, timeMax))
-    algo(ridesToDo, vehicules, T)
+    vehicules algo(ridesToDo, vehicules, T)
     
     """
     Ecriture du fichier d'output
@@ -49,8 +49,8 @@ for filename in files_list:
     for k in range(0, nbVehic):
         l = str(len(vehicules[k].rides_done))
         for id_ in vehicules[k].rides_done:
-            l += " " + str(id_)
-        output.write(l)
+            l = l + " " + str(id_)
+        output.write(l + "\n")
     
     output.close()
     
