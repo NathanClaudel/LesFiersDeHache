@@ -30,7 +30,8 @@ for k in range(0, nbVehic):
 Ici le coeur de l'algo
 """
 
-listRides.sort(key=lambda x: x.earlyStart)
+# Sorting the list of rides that have to be made by starting time
+ridesToDo.sort(key=lambda x: x.earlyStart)
 
 """
 Ecriture du fichier d'output
