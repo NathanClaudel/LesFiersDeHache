@@ -1,4 +1,4 @@
-from Ride.py import Ride
+from Ride import Ride
 
 class Vehicule():
     pos = 0, 0
