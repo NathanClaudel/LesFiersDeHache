@@ -1,5 +1,5 @@
-from Ride.py import *
-from vehicule.py import *
+from Ride import *
+from vehicule import *
 
 fichier = open("a_example.in", "r")
 constants = fichier.readline().rstrip().split(' ')
@@ -13,7 +13,7 @@ timeMax = int(constants[5])
 listRides = []
 
 for k in range(0, nbRides):
-    listRides.append(Ride(map(lambda x: int(x), fichier.readline().rstrip().split(' ')), k))
+    listRides.append(Ride(list(map(lambda x: int(x), fichier.readline().rstrip().split(' '))), k))
 
 
 vehicules = []
@@ -23,5 +23,6 @@ for k in range(0, nbVehic):
 #ici le code de l'algo
 
 output = open("a_output.txt", "w")
+
 for k in range(0, nbVehic):
     output.write(vehicules[k])
