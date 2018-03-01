@@ -1,9 +1,9 @@
 from Ride import *
 from vehicule import *
-from algo_vo import *
+from algo_v0 import *
 
 total_score = 0
-files_list = ["a_exemple", "b_should_be_easy", "c_no_hurry", "d_metropolis", "e_high_bonus"]
+files_list = ["a_example", "b_should_be_easy", "c_no_hurry", "d_metropolis", "e_high_bonus"]
 
 for filename in files_list:
     """
@@ -24,7 +24,6 @@ for filename in files_list:
     
     for k in range(0, nbRides):
         listRides.append(Ride(list(map(lambda x: int(x), fichier.readline().rstrip().split(' '))), k))
-        ridesToDo.append(Ride(list(map(lambda x: int(x), fichier.readline().rstrip().split(' '))), k))
     fichier.close()
     
     vehicules = []
@@ -36,7 +35,8 @@ for filename in files_list:
     """
     
     # Sorting the list of rides to do by starting time
-    listRides.sort(key=lambda x: x.earlyStart)
+    ridesToDo = [ride for ride in listRides]
+    ridesToDo.sort(key=lambda x: x.earlyStart)
     T = list(range(0, timeMax))
     algo(ridesToDo, vehicules, T)
     
