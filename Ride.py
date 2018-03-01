@@ -12,6 +12,7 @@ class Ride():
     Calculated:
     time
     lastestStart
+    done
     """
 
     def __init__(self, L, id_number):
@@ -22,3 +23,4 @@ class Ride():
         self.time = abs(self.posStart[0] - self.posEnd[0]) + abs(self.posStart[1] - self.posEnd[1])
         self.latestStart = self.latestFinish - self.time
         self.id = id_number
+        self.done = False
