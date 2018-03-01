@@ -14,7 +14,6 @@ def algo(rides, vehicles, T):
             try:
                 (vehicle, time_waited) = choose_vehicle(t, ride, waiting_vehicles)
                 vehicle.set_ride(ride, t)
-                waiting_vehicles.remove((vehicle, time_waited))
                 
             except Exception:
                 pass
@@ -41,8 +40,8 @@ def choose_vehicle(t, ride, waiting_vehicles):
 
 def rides_to_check(rides, t):
     r_list = []
-    for(ride in rides):
         if(t > ride.latestFinish):
+    for ride in rides:
             rides.remove(ride)
         if(t >= ride.earlyStart):
             r_list.append(ride)
