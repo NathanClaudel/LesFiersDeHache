@@ -14,10 +14,8 @@ class Ride():
     """
 
     def __init__(self, L):
-        self.xStart = L[0]
-        self.yStart = L[1]
-        self.xEnd = L[2]
-        self.yEnd = L[3]
+        self.posStart = (L[0], L[1])
+        self.posEnd = (L[2], L[3])
         self.earlyStart L[4]
         self.latestFinish = L[5]
         self.time = abs(xStart - xEnd) + abs(yStart - yEnd)
