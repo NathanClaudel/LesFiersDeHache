@@ -25,8 +25,6 @@ def algo(rides, vehicles, T):
             vehicle.update()
             if not vehicle.is_used:
                 waiting_vehicles.append(vehicle)
-    
-    return vehicles
         
             
 def choose_vehicle(t, ride, waiting_vehicles):
