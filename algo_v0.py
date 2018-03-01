@@ -12,9 +12,8 @@ def algo(rides, vehicles, T):
         for ride in rides_to_check:
             
             try:
-                (vehicle, time_waited) = choose_vehicle(t, ride, waiting_vehicles)
+                vehicle = choose_vehicle(t, ride, waiting_vehicles)
                 vehicle.set_ride(ride, t)
-                waiting_vehicles.remove((vehicle, time_waited))
                 
             except Exception:
                 pass
@@ -29,11 +28,11 @@ def algo(rides, vehicles, T):
         
             
 def choose_vehicle(t, ride, waiting_vehicles):    
-    for (vehicle, time_waited) in waiting_vehicles:
+    for vehicle in waiting_vehicles:
         d = dist(vehicle.pos, ride.posStart)
         
-        if(d <= time_waited):
-            return (vehicle, time_waited)
+        if(d <= vehicle.time_waited):
+            return vehicle
     
     raise Exception("No vehicle can do this ride")
     

@@ -15,7 +15,7 @@ class Vehicule():
     
     #set a ride
     def set_ride(self, ride):
-        self.time_counter = ride.time + dist(ride.posStart, pos)
+        self.time_counter = ride.time + dist(ride.posStart, self.pos)
         self.pos = ride.posEnd
         self.is_used = True
         self.rides_done.append(ride.id_number)

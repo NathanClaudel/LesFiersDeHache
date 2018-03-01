@@ -35,6 +35,7 @@ for filename in files_list:
     Ici le coeur de l'algo
     """
     
+    # Sorting the list of rides to do by starting time
     listRides.sort(key=lambda x: x.earlyStart)
     T = list(range(0, timeMax))
     algo(ridesToDo, vehicules, T)
