@@ -23,7 +23,7 @@ def algo(rides, vehicles, T):
         
         for vehicle in vehicles:
             vehicle.update()
-            if not vehicle.isUsed:
+            if not vehicle.is_used:
                 waiting_vehicles.append(vehicle)
             
         
@@ -48,4 +48,4 @@ def rides_to_check_gen(rides, t):
             rides.remove(ride)
         if(t >= ride.earlyStart):
             r_list.append(ride)
-
+    return r_list

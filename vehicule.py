@@ -2,16 +2,16 @@ from Ride import Ride
 
 
 class Vehicule():
-    pos = 0, 0
-    time_counter = 0
-    is_used = False
-    waiting_time = 0
-    
-    rides_done = []
+
     
     #constructeur
     def __init__(self):
-        pass
+        self.pos = (0,0)
+        self.time_counter = 0
+        self.is_used = False
+        self.waiting_time = 0
+        
+        self.rides_done = []
     
     #set a ride
     def set_ride(self, ride):
@@ -25,9 +25,9 @@ class Vehicule():
             self.time_counter -= 1
             if(self.time_counter == 0):
                 self.is_used = False
-                waiting_time = 0
+                self.waiting_time = 0
         else:
-            waiting_time += 1
+            self.waiting_time += 1
 
     
     def get_pos(self):
