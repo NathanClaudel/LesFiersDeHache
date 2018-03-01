@@ -7,13 +7,15 @@ class Ride():
     yEnd
     earlyStart
     latestFinish
+    id
 
     Calculated:
     time
     lastestStart
     """
 
-    def __init__(self, L):
+    def __init__(self, L, n):
+        self.id = n
         self.xStart = L[0]
         self.yStart = L[1]
         self.xEnd = L[2]
