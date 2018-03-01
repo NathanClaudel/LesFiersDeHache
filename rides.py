@@ -1,5 +1,6 @@
 from Ride import *
 from vehicule import *
+from algo_vo import *
 
 total_score = 0
 files_list = ["a_exemple", "b_should_be_easy", "c_no_hurry", "d_metropolis", "e_high_bonus"]
@@ -35,7 +36,9 @@ for filename in files_list:
     """
     
     # Sorting the list of rides to do by starting time
-    ridesToDo.sort(key=lambda x: x.earlyStart)
+    listRides.sort(key=lambda x: x.earlyStart)
+    T = list(range(0, timeMax))
+    algo(ridesToDo, vehicules, T)
     
     """
     Ecriture du fichier d'output
