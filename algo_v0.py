@@ -41,7 +41,7 @@ def choose_vehicle(t, ride, waiting_vehicles):
 
 def rides_to_check(rides, t):
     r_list = []
-    for(ride in rides):
+    for ride in rides:
         if(t > ride.latestFinish):
             rides.remove(ride)
         if(t >= ride.earlyStart):
