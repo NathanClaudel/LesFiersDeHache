@@ -9,7 +9,9 @@ class Vehicule():
         pass
     
     #set a ride
-    def set_ride(self, time, pos_departure, pos_arrival):
+    def set_ride(self, time, ride):
+        pos_departure = ride.posStart
+        pos_arrival = ride.posEnd
         self.time_counter = time + abs(self.pos[0] - pos_departure[0]) + abs(self.pos[1] - pos_departure[1])
         self.pos = pos_arrival
         self.is_used = True
@@ -19,6 +21,11 @@ class Vehicule():
             self.time_counter -= 1
             if(self.time_counter == 0):
                 self.is_used = False
+            
+    def update_time(self, current_time):
+        if(current_time >= time_counter):
+            is_used = False
+
     
     def get_pos(self):
         return self.pos
