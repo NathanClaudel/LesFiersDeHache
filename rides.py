@@ -20,5 +20,8 @@ vehicules = []
 for k in range(0, nbVehic):
     vehicules.append(Vehicule())
 
+#ici le code de l'algo
+
 output = open("a_output.txt", "w")
-#output.write()
+for k in range(0, nbVehic):
+    output.write(vehicules[k])
