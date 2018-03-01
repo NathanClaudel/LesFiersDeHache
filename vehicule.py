@@ -18,7 +18,8 @@ class Vehicule():
         self.time_counter = ride.time + dist(ride.posStart, self.pos)
         self.pos = ride.posEnd
         self.is_used = True
-        self.rides_done.append(ride.id_number)
+        self.rides_done.append(ride.id)
+        print(ride.time)
     
     def update(self):
         if(self.time_counter > 0):

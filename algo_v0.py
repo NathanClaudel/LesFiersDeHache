@@ -1,5 +1,4 @@
-from vehicule import *
-from Ride import *
+from vehicule import dist
 
 def algo(rides, vehicles, T):
     '''rides are sorted by (first start date, last possible start date) '''
@@ -9,15 +8,12 @@ def algo(rides, vehicles, T):
     for t in T:
         
         rides_to_check = rides_to_check_gen(rides, t) #rides with start_date <= t <= latest_start
-        
         for ride in rides_to_check:
             
-            try:
-                vehicle = choose_vehicle(t, ride, waiting_vehicles)
-                vehicle.set_ride(ride, t)
-                
-            except Exception:
-                pass
+
+            vehicle = choose_vehicle(t, ride, waiting_vehicles)
+            if vehicle is not None:
+                vehicle.set_ride(ride)
         
         waiting_vehicles = []
         
@@ -32,11 +28,10 @@ def choose_vehicle(t, ride, waiting_vehicles):
     '''returns a vehicle able to make the ride'''
     for vehicle in waiting_vehicles:
         d = dist(vehicle.pos, ride.posStart)
-        
-        if(d <= vehicle.time_waited):
+        if(d <= vehicle.waiting_time):
             return vehicle
     
-    raise Exception("No vehicle can do this ride")
+    return None
     
     
 
