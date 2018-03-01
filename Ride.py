@@ -23,4 +23,4 @@ class Ride():
         self.time = abs(self.posStart[0] - self.posEnd[0]) + abs(self.posStart[1] - self.posEnd[1])
         self.latestStart = self.latestFinish - self.time
         self.id = id_number
-        self.done = false
+        self.done = False
